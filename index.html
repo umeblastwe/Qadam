@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qadam | Shoes for every step</title>
+<meta name="description" content="Qadam is a Pakistani online shoe brand for men and women. Sneakers, loafers, khussa, sandals and more with cash on delivery.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230e2b25'/%3E%3Ctext x='32' y='45' font-size='36' text-anchor='middle' fill='%23c8a15a' font-family='serif'%3EQ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<a class="skip" href="#shop">Skip to shop</a>
+
+<header class="site-header" id="top">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="Qadam home"><span class="logo-ur" lang="ur">قدم</span><span class="logo-en">Qadam</span></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#startup">Startup costs</a>
+      <a href="#calculator">Profit calculator</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-brass btn-sm" href="#order">Place an order</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ur" lang="ur" aria-hidden="true">قدم</div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="hero-kicker">Online shoe store in Pakistan</p>
+      <h1>Good shoes for<br>every step you take.</h1>
+      <p class="hero-lead">Sneakers, leather loafers, Oxfords, khussa and sandals for men and women. Order online, pay when it reaches your door.</p>
+      <div class="hero-cta">
+        <a class="btn btn-brass" href="#shop">Shop the collection</a>
+        <a class="btn btn-ghost" href="#order">Place an order</a>
+      </div>
+      <ul class="hero-points">
+        <li>Cash on delivery</li>
+        <li>7-day exchange</li>
+        <li>Free delivery over PKR 5,000</li>
+      </ul>
+    </div>
+    <div class="steps" aria-hidden="true">
+      <figure class="arch a1"><img src="static/images/8-womens-mint-khussa.webp" alt=""><figcaption>Mint khussa <b>PKR 2,900</b></figcaption></figure>
+      <figure class="arch a2"><img src="static/images/1-mens-navy-sneakers.webp" alt=""><figcaption>Navy sneakers <b>PKR 4,500</b></figcaption></figure>
+      <figure class="arch a3"><img src="static/images/3-mens-brown-loafers.webp" alt=""><figcaption>Brown loafers <b>PKR 5,200</b></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section class="section" id="shop">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>The collection</h2>
+        <p class="sub">9 designs for men and women. Prices are in Pakistani rupees.</p>
+      </div>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Filter by gender" id="filters">
+          <button class="on" data-f="all" aria-pressed="true">All</button>
+          <button data-f="Men" aria-pressed="false">Men</button>
+          <button data-f="Women" aria-pressed="false">Women</button>
+        </div>
+        <label class="sort"><span class="sr">Sort by</span>
+          <select id="sort">
+            <option value="default">Featured</option>
+            <option value="low">Price: low to high</option>
+            <option value="high">Price: high to low</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- PROMO BANNER -->
+<section class="promo" aria-label="Free delivery offer">
+  <div class="wrap promo-in">
+    <div class="promo-copy">
+      <p class="promo-tag">Opening offer</p>
+      <h2>Free delivery on orders above PKR 5,000.</h2>
+      <p>Pick any two pairs from our everyday range and we cover the courier. Unhappy with the fit? Exchange within 7 days.</p>
+      <a class="btn btn-pine" href="#order">Order now</a>
+    </div>
+    <div class="promo-img">
+      <img src="static/images/8-womens-mint-khussa.webp" alt="Embroidered mint green khussa" loading="lazy">
+      <img src="static/images/9-mens-peshawari-chappal.webp" alt="Tan leather Peshawari chappal" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap about">
+    <div>
+      <h2>Why we named it Qadam</h2>
+      <p class="big">Qadam means a step. Every pair we sell is chosen for the steps of an ordinary day: to the office, to class, to a wedding, to the market.</p>
+    </div>
+    <div class="about-cols">
+      <div>
+        <h3>What we sell</h3>
+        <p>Everyday sneakers, formal leather shoes, sandals and flats, plus traditional Pakistani footwear like khussa and Peshawari chappal. Between PKR 2,900 and PKR 5,800.</p>
+      </div>
+      <div>
+        <h3>How we sell</h3>
+        <p>Qadam is an online-only store. We take orders on the website, WhatsApp and Instagram, pack them ourselves and ship across Pakistan by courier.</p>
+      </div>
+      <div>
+        <h3>Who it is for</h3>
+        <p>Students, young professionals and families who want good-looking, comfortable shoes at fair prices without visiting a mall.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STARTUP COSTS -->
+<section class="section tint" id="startup">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>What it costs to start Qadam</h2>
+        <p class="sub">Estimated one-time costs to open the business, and where the money comes from.</p>
+      </div>
+    </div>
+    <div class="two">
+      <div class="card">
+        <h3>Startup costs</h3>
+        <ul class="bars" id="costList"></ul>
+        <div class="total"><span>Total startup cost</span><strong id="costTotal"></strong></div>
+      </div>
+      <div class="card">
+        <h3>Sources of funds</h3>
+        <div class="stack" id="fundStack" role="img" aria-label="Share of each funding source"></div>
+        <ul class="funds" id="fundList"></ul>
+        <div class="total"><span>Total funds raised</span><strong id="fundTotal"></strong></div>
+        <p class="note" id="fundNote"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="section" id="calculator">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Monthly sales, expenses and profit</h2>
+        <p class="sub">Change the number of pairs sold per month and see the profit update.</p>
+      </div>
+      <button class="btn btn-line btn-sm" id="resetCalc" type="button">Reset to estimates</button>
+    </div>
+    <div class="calc">
+      <div class="calc-inputs">
+        <div class="card">
+          <h3>Pairs sold per month</h3>
+          <div id="unitRows" class="rows"></div>
+        </div>
+        <div class="card">
+          <h3>Costs</h3>
+          <label class="field-inline">
+            <span>Cost of shoes (% of selling price)</span>
+            <span class="rangebox"><input type="range" id="costPct" min="30" max="80" step="1"><output id="costPctOut"></output></span>
+          </label>
+          <div id="expRows" class="rows"></div>
+        </div>
+      </div>
+      <aside class="calc-out" aria-live="polite">
+        <p class="out-label">Expected monthly profit</p>
+        <p class="out-big" id="oProfit"></p>
+        <p class="out-sub" id="oMargin"></p>
+        <div class="flow" id="flow" role="img" aria-label="How sales are split between shoe costs, expenses and profit"></div>
+        <dl class="out-list">
+          <div><dt>Pairs sold</dt><dd id="oUnits"></dd></div>
+          <div><dt>Sales (revenue)</dt><dd id="oRev"></dd></div>
+          <div><dt>Cost of shoes</dt><dd id="oCogs"></dd></div>
+          <div><dt>Gross profit</dt><dd id="oGross"></dd></div>
+          <div><dt>Other expenses</dt><dd id="oExp"></dd></div>
+          <div class="hl"><dt>Net profit</dt><dd id="oNet"></dd></div>
+          <div><dt>Time to earn back startup cost</dt><dd id="oPay"></dd></div>
+        </dl>
+        <p class="note">Net profit = sales &minus; cost of shoes &minus; other expenses.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ORDER -->
+<section class="section tint" id="order">
+  <div class="wrap order">
+    <div class="order-side">
+      <h2>Place an order</h2>
+      <p class="sub">Tell us what you want and where to send it. We confirm by phone or WhatsApp, and you pay cash on delivery.</p>
+      <div class="order-img"><img id="orderImg" src="static/images/1-mens-navy-sneakers.webp" alt=""></div>
+    </div>
+    <form class="card form" id="orderForm" novalidate>
+      <div class="f2">
+        <label>Full name<input name="name" autocomplete="name" required><em class="err" data-for="name"></em></label>
+        <label>Mobile number<input name="phone" inputmode="tel" autocomplete="tel" placeholder="0300 1234567" required><em class="err" data-for="phone"></em></label>
+      </div>
+      <label>Product
+        <select name="productId" id="orderProduct" required></select>
+        <em class="err" data-for="productId"></em>
+      </label>
+      <div class="f2">
+        <div class="fieldset">
+          <span class="lab">Size (EU)</span>
+          <div class="sizes" id="sizes" role="radiogroup" aria-label="Size"></div>
+          <em class="err" data-for="size"></em>
+        </div>
+        <label>Quantity
+          <span class="qty"><button type="button" data-q="-1" aria-label="Decrease">&minus;</button><input name="quantity" id="qty" value="1" inputmode="numeric" readonly><button type="button" data-q="1" aria-label="Increase">+</button></span>
+        </label>
+      </div>
+      <div class="f2">
+        <label>City<input name="city" autocomplete="address-level2" required><em class="err" data-for="city"></em></label>
+        <label>Note (optional)<input name="note" maxlength="300" placeholder="e.g. call before delivery"></label>
+      </div>
+      <label>Delivery address<textarea name="address" rows="2" autocomplete="street-address" required></textarea><em class="err" data-for="address"></em></label>
+      <div class="summary" id="summary"></div>
+      <button class="btn btn-pine btn-block" type="submit" id="submitBtn">Send order request</button>
+      <p class="form-msg" id="formMsg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="wrap">
+    <h2>Contact us</h2>
+    <div class="contact-grid" id="contactGrid"></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot">
+    <div><span class="logo-ur" lang="ur">قدم</span> <strong>Qadam</strong><p>Shoes for every step.</p></div>
+    <p class="fine">Student prototype for Financial Management, Assignment 1, KASBIT. Not a real store. Prices and financial figures are estimates.</p>
+  </div>
+</footer>
+
+<!-- QUICK VIEW -->
+<dialog class="qv" id="qv" aria-labelledby="qvName">
+  <button class="qv-x" id="qvClose" aria-label="Close">&times;</button>
+  <div class="qv-img"><img id="qvImg" alt=""></div>
+  <div class="qv-body">
+    <p class="qv-meta" id="qvMeta"></p>
+    <h3 id="qvName"></h3>
+    <p class="qv-price" id="qvPrice"></p>
+    <p id="qvDesc"></p>
+    <ul class="qv-feat" id="qvFeat"></ul>
+    <button class="btn btn-pine" id="qvOrder" type="button">Order this pair</button>
+  </div>
+</dialog>
+
+<script src="static/js/data.js"></script>
+<script src="static/js/app.js"></script>
+</body>
+</html>

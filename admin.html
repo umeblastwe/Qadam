@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Qadam admin | Orders</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#f4f4f0;color:#14201c}
+header{background:#0e2b25;color:#fff;padding:16px 24px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+header h1{font-size:1.2rem;margin:0;flex:1}
+main{padding:24px;max-width:1200px;margin:auto}
+input,select,button{font:inherit;padding:8px 12px;border-radius:8px;border:1px solid #ccc}
+button{background:#c8a15a;border:0;cursor:pointer;font-weight:600}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #e5e5df;font-size:.92rem;vertical-align:top}
+th{background:#eaeae3}
+.stats{display:flex;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.stat{background:#fff;padding:14px 20px;border-radius:10px}.stat b{display:block;font-size:1.4rem}
+#msg{color:#b3372c;margin:12px 0}
+.wrapt{overflow-x:auto}
+</style></head><body>
+<header><h1>Qadam orders</h1>
+<input id="key" type="password" placeholder="Admin key"><button id="go">Load orders</button></header>
+<main><p id="msg"></p><div class="stats" id="stats"></div>
+<div class="wrapt"><table id="t" hidden><thead><tr><th>#</th><th>Date</th><th>Customer</th><th>Product</th><th>Size</th><th>Qty</th><th>Total</th><th>Status</th></tr></thead><tbody></tbody></table></div></main>
+<script>
+const $=s=>document.querySelector(s), pkr=n=>"PKR "+Number(n).toLocaleString("en-PK");
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+async function load(){
+  const key=$("#key").value; $("#msg").textContent="";
+  const r=await fetch("/api/orders",{headers:{"X-Admin-Key":key}});
+  if(!r.ok){$("#msg").textContent=(await r.json()).error||"Could not load orders.";return}
+  const rows=await r.json();
+  $("#stats").innerHTML=`<div class="stat"><b>${rows.length}</b>Orders</div><div class="stat"><b>${pkr(rows.filter(o=>o.status!=="Cancelled").reduce((s,o)=>s+o.total,0))}</b>Order value</div>`;
+  $("#t").hidden=false;
+  $("#t tbody").innerHTML=rows.map(o=>`<tr><td>${o.id}</td><td>${esc(o.created_at.replace("T"," "))}</td>
+   <td>${esc(o.name)}<br>${esc(o.phone)}<br>${esc(o.city)}, ${esc(o.address)}${o.note?"<br><i>"+esc(o.note)+"</i>":""}</td>
+   <td>${esc(o.product_name)}</td><td>${esc(o.size)}</td><td>${o.quantity}</td><td>${pkr(o.total)}</td>
+   <td><select data-id="${o.id}">${["New","Confirmed","Shipped","Delivered","Cancelled"].map(s=>`<option${s===o.status?" selected":""}>${s}</option>`).join("")}</select></td></tr>`).join("")
+   || `<tr><td colspan="8">No orders yet.</td></tr>`;
+}
+$("#go").onclick=load;
+$("#t").addEventListener("change",async e=>{const s=e.target.closest("select");if(!s)return;
+  await fetch("/api/orders/"+s.dataset.id,{method:"PATCH",headers:{"Content-Type":"application/json","X-Admin-Key":$("#key").value},body:JSON.stringify({status:s.value})});});
+</script></body></html>
