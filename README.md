@@ -66,38 +66,9 @@ Net profit = Sales - Cost of shoes - Other expenses
 Time to earn back the startup cost: 375,000 / 47,835 = about **7.8 months**.
 
 ## 6. The website
-- Home page with banner, product collection (filter by Men/Women, sort by price, quick view)
-- Offer banner, About section
-- Order request form with live total and validation (saved in a database)
-- Contact section (edit `data/finance.json` to put in your real phone, email and Instagram)
-- Admin page at `/admin` to see orders and change their status (default key: `qadam123`)
+The website is live on https://qaadam.netlify.app/
 
-### Project structure
-```
-index.html          website page
-admin.html          order list for the owner
-app.py              Flask backend (API + SQLite database)
-build_static.py     rebuilds static/js/data.js after you edit data/*.json
-data/products.json  product names, prices, descriptions
-data/finance.json   startup costs, funds, expenses, contact details
-static/             css, js, images
-```
-
-### Run it
-```bash
-pip install -r requirements.txt
-python app.py
-```
-Open http://127.0.0.1:5000. Orders are saved in `data/qadam.db`.
-Without the backend, you can open `index.html` directly. The order form then saves requests in the browser (demo mode).
-
-**API:** `GET /api/products`, `GET /api/finance`, `POST /api/calculate`, `POST /api/orders`, `GET /api/orders` (admin key needed).
-
-### Add a product
-Add its image to `static/images/`, add an entry in `data/products.json`, then run `python build_static.py`.
 
 ## 7. AI tools used
 - **Google Gemini:** generated the product photos.
 - **Claude (Anthropic):** wrote the website code (HTML, CSS, JavaScript, Flask backend), suggested the startup cost, sales and expense estimates, and wrote this README.
-
-All financial figures are estimates and were checked by the group. This is a student prototype, not a real store.
