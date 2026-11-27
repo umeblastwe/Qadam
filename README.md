@@ -64,13 +64,9 @@ Net profit = Sales - Cost of shoes - Other expenses
 ```
 Time to earn back the startup cost: 375,000 / 47,835 = about **7.8 months**.
 
-The website has a live calculator for this: change the pairs sold, cost percentage or expenses and the profit updates.
-
 ## 6. The website
 - Home page with banner, product collection (filter by Men/Women, sort by price, quick view)
 - Offer banner, About section
-- Startup costs and sources of funds
-- Monthly sales, expenses and profit calculator
 - Order request form with live total and validation (saved in a database)
 - Contact section (edit `data/finance.json` to put in your real phone, email and Instagram)
 - Admin page at `/admin` to see orders and change their status (default key: `qadam123`)
